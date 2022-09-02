@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" lang="es">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> El Ahorcado</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    </head>
+    <body class="light">
+        <div class="bannerLogo">
+            <img id="toastx" class="logo" src="img/EL AHORCADO.png">
+        </div>
+        <div class="content2 block" id="inicio">
+            <button id="home" class="btnInicio" onclick="jugar()">Iniciar Juego</button><br>
+            <button id="home" class="btnInicio" onclick="addWord()">Agregar Nueva Palabra</button>
+        </div>
+        <canvas id="cvDraw" width="200" height="200" style="border: none;">Canvas is not supported</canvas>
+        <div class="content" id="juego">
+            <div class="flex">
+                <div class="boxWords" id="words">
+                </div>
+            </div>
+            <div class="msgGame">
+                <span class="game" id="win"> ¡Ganaste!</span>
+                <span class="game" id="lose"> Lo siento, perdiste </span><br>
+                <span class="game" id="lose2">La palabra es: </span><br>
+                <span class="game" id="pUsadas"></span>
+            </div>
+            <div class="stats1 flex">
+                <div class="">
+                    <button class="reload" onclick="newJuego()">Juego nuevo</button>
+                </div>
+                <div class="">
+                    <button class="reload" onclick="window.location.reload()">Desistir</button>
+                </div>
+                <div class="datos" id="intent">Intentos: 10</div>
+            </div>
+            <div class="teclado" id="tcl">
+                <button onclick="getLetter('A')" class="lett" id="A" >A</button>
+                <button onclick="getLetter('B')" class="lett" id="B" >B</button>
+                <button onclick="getLetter('C')" class="lett" id="C" >C</button>
+                <button onclick="getLetter('D')" class="lett" id="D" >D</button>
+                <button onclick="getLetter('E')" class="lett" id="E" >E</button>
+                <button onclick="getLetter('F')" class="lett" id="F" >F</button>
+                <button onclick="getLetter('G')" class="lett" id="G" >G</button>
+                <button onclick="getLetter('H')" class="lett" id="H" >H</button>
+                <button onclick="getLetter('I')" class="lett" id="I" >I</button>
+                <button onclick="getLetter('J')" class="lett" id="J" >J</button>
+                <button onclick="getLetter('K')" class="lett" id="K" >K</button>
+                <button onclick="getLetter('L')" class="lett" id="L" >L</button>
+                <button onclick="getLetter('M')" class="lett" id="M" >M</button>
+                <button onclick="getLetter('N')" class="lett" id="N" >N</button>
+                <button onclick="getLetter('Ñ')" class="lett" id="Ñ" >Ñ</button>
+                <button onclick="getLetter('O')" class="lett" id="O" >O</button>
+                <button onclick="getLetter('P')" class="lett" id="P" >P</button>
+                <button onclick="getLetter('Q')" class="lett" id="Q" >Q</button>
+                <button onclick="getLetter('R')" class="lett" id="R" >R</button>
+                <button onclick="getLetter('S')" class="lett" id="S" >S</button>
+                <button onclick="getLetter('T')" class="lett" id="T" >T</button>
+                <button onclick="getLetter('U')" class="lett" id="U" >U</button>
+                <button onclick="getLetter('V')" class="lett" id="V" >V</button>
+                <button onclick="getLetter('W')" class="lett" id="W" >W</button>
+                <button onclick="getLetter('X')" class="lett" id="X" >X</button>
+                <button onclick="getLetter('Y')" class="lett" id="Y" >Y</button>
+                <button onclick="getLetter('Z')" class="lett" id="Z" >Z</button>
+            </div>
+            <span> Marina Nuñez &copy; 2022 | 
+                <a target="_blank" href="https://github.com/marinanunez">GitHub</a> | 
+                <a target="_blank" href="https://twitter.com/marinanunezH">Twitter</a> | 
+                <a target="_blank" href="https://www.linkedin.com/in/marina-n-2780391b8/">LinkedIn</a> | 
+        </div>
+        <div id="toast-qr" class="toast">
+            <p>Introduce la palabra</p>
+            <h6>Max. 8 letras.</h6>
+            <input type="text" id="palabra" onkeyup="upper()" maxlength="8" autocomplete="off" required>
+            <br>
+            <button class="toastbtn" onclick="valida()" class="btnJoin">Guardar y Empezar</button>
+            <button class="toastbtn" onclick="cancelAdd()" class="btnJoin">Cancelar</button>   
+        </div>
+    </body>
+    <script src="script.js"></script>
+</html>
